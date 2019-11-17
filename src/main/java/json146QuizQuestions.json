@@ -1,0 +1,150 @@
+//will add quiz questions from CS146 here soon
+
+{
+  "questions": [{
+    "q": "A Java keyword for referring to the superclass is?",
+    "a": "Constructor",
+    "b": "Super",
+    "c": "Subclass",
+    "d": "Superclass",
+    "ans": "Super"
+  },{
+    "q": "What is the typical method you override in the subclass?",
+    "a": "mouseClicked()",
+    "b": "setButton()",
+    "c": "toString()",
+    "d": "repaint()",
+    "ans": "toString()"
+  },{
+    "q": "How many primitive data types are there?",
+    "a": "3",
+    "b": "4",
+    "c": "6",
+    "d": "8",
+    "ans": "6"
+  },{
+    "q": "If I have one superclass, how many subclasses can I have?",
+    "a": "1",
+    "b": "10",
+    "c": "Infinity",
+    "d": "2",
+    "ans": "Infinity"
+  },{
+    "q": "What are wrapper classes used for?",
+    "a": "To convert a string to individual chars",
+    "b": "To convert primitive data type to a object type",
+    "c": "To define interfaces more easily",
+    "d": "To make constructors more accessible",
+    "ans": "To convert primitive data type to a object type"
+  },{
+    "q": "How many wrapper classes are there?",
+    "a": "1",
+    "b": "8",
+    "c": "3",
+    "d": "10",
+    "ans": "8"
+
+  },{
+    "q": "What is a String?",
+    "a": "Collection of characters that are mutable",
+    "b": "Collection of characters that are immutable",
+    "c": "Collection of binary numbers encoded in the alphabet",
+    "d": "It's the same thing as a charachter",
+    "ans": "Collection of characters that are immutable"
+  },{
+
+    "q": "Where is your program executed?",
+    "a": "In the computer's processor",
+    "b": "In the computer's hardrive",
+    "c": "In the computer's SSD",
+    "d": "In the computer's RAM",
+    "ans": "In the computer's RAM"
+  },{
+    "q": "What is the difference between ArrayList and Array?",
+    "a": "ArrayList is always unorderd while array is ordered",
+    "b": "Array can contain infinity number of elements, while ArrayList can only contain a finite number",
+    "c": "An Array contain a fixed number of elements, while in an ArrayList you can remove/add items",
+    "d": "You can only store primitive data types in an ArrayList",
+    "ans": "An Array contain a fixed number of elements, while in an ArrayList you can remove/add items"
+  },{
+    "q": "Why do we have to minimize the number of couplings?",
+    "a": "To maximize time efficency",
+    "b": "Because if you change one thing in the code, it might affect many other aspects in the code",
+    "c": "To minimize amount of storage use",
+    "d": "Because otherwise the code will be hard to read",
+    "ans": "Because if you change one thing in the code, it might affect many other aspects in the code"
+  },{
+    "q": "What does the superclass store?",
+    "a": "It stores all the interfaces",
+    "b": "It stores everything the subclasses use",
+    "c": "It stores all the programs constructors",
+    "d": "It stores all the programs mutators",
+    "ans": "It stores everything the subclasses use"
+  },{
+    "q": "What does the CRC stand for?",
+    "a": "Compiler Reader Compatiblity",
+    "b": "Constructor Redundancy Cycle",
+    "c": "Class Responsibility Collaborators",
+    "d": "Count Radix Computing",
+    "ans": "Class Responsibility Collaborators"
+  },{
+    "q": "When would you use a private constructor?",
+    "a": "When you want to disallow instantiation of the class from outside that class",
+    "b": "When you want to make an encrypted program",
+    "c": "When you want to minimize the number of dependencies",
+    "d": "When you don't need a mutator",
+    "ans": "When you want to disallow instantiation of the class from outside that class"
+  },{
+    "q": "A mouse event is a(n) ... ",
+    "a": "Listener",
+    "b": "Object",
+    "c": "Interface",
+    "d": "All of the above",
+    "ans": "All of the above"
+  },{
+    "q": "A class which implements the ActionListener interface must implement which method?",
+    "a": "void handle( ActionEvent e )",
+    "b": "void actionPerformed( ActionEvent e ) ",
+    "c": "void eventDispatched( AWTEvent e )",
+    "d": "String getActionCommand( ActionEvent e )",
+    "ans": "void actionPerformed( ActionEvent e )"
+  },{
+    "q": "Why would a class be declared as abstract?",
+    "a": "Because it doesn’t make logical sense to instantiate it",
+    "b": "So that it can be used as an interface",
+    "c": "So that it cannot be inherited from",
+    "d": "Because it has no abstract methods",
+    "ans": "Because it doesn’t make logical sense to instantiate it"
+  },{
+    "q": "Which of the following is true about an abstract method inherited into a class C?",
+    "a": "All of these answers are true",
+    "b": "It overrides any method in C with the same name",
+    "c": "It always forces C to become abstract",
+    "d": "It must be defined in C before C can be instantiated",
+    "ans": "It must be defined in C before C can be instantiated"
+  },{
+    "q": "What are the 4 key words in Object Oriented Programming",
+    "a": "Polymorphism, Encapsulation, Inheritance and Abstraction",
+    "b": "Constructors, Coupling, Interface and Superclasses",
+    "c": "Method, Inheritence, Concurrency and Abstraction",
+    "d": "There are no 4 key words",
+    "ans": "Polymorphism, Encapsulation, Inheritance and Abstraction"
+  },{
+    "q": "What is method overloading?",
+    "a": "When a class is allowed to have multiple methods with the same name",
+    "b": "When the program is can't compile because a method is too big",
+    "c": "When the constructor is allowed to have different argument lists",
+    "d": "When a method allows a subclass to provide a specific implementation of a method that is already provided by one of its superclasses",
+    "ans": "When a class is allowed to have multiple methods with the same name"
+  },{
+    "q": "What is/are the key word(s) in exception handling?",
+    "a": "try",
+    "b": "catch",
+    "c": "throw",
+    "d": "All of the above",
+    "ans": "All of the above"
+
+
+  }
+  ]
+}
