@@ -1,0 +1,39 @@
+{
+  "questions": [{
+    "q": "A Java keyword for referring to the superclass is?",
+    "a": "Constructor",
+    "b": "Super",
+    "c": "Subclass",
+    "d": "Superclass",
+    "ans": "Super"
+    },{
+    "q": "What is the typical method you override in the subclass?",
+    "a": "mouseClicked()",
+    "b": "setButton()",
+    "c": "toString()",
+    "d": "repaint()",
+    "ans": "toString()"
+    },{
+    "q": "How many primitive data types are there?",
+    "a": "3",
+    "b": "4",
+    "c": "6",
+    "d": "8",
+    "ans": "6"
+    },{
+    "q": "If I have one superclass, how many subclasses can I have?",
+    "a": "1",
+    "b": "10",
+    "c": "Infinity",
+    "d": "2",
+    "ans": "Infinity"
+    },{
+    "q": "How many superclasses does Java support?",
+    "a": "1",
+    "b": "10",
+    "c": "Infinity",
+    "d": "2",
+    "ans": "1"
+    }
+    ]
+}
