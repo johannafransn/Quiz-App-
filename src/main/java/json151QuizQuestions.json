@@ -102,7 +102,7 @@
   },{
     "q": "A class which implements the ActionListener interface must implement which method?",
     "a": "void handle( ActionEvent e )",
-    "b": "void actionPerformed( ActionEvent e ) ",
+    "b": "void actionPerformed( ActionEvent e )",
     "c": "void eventDispatched( AWTEvent e )",
     "d": "String getActionCommand( ActionEvent e )",
     "ans": "void actionPerformed( ActionEvent e )"
