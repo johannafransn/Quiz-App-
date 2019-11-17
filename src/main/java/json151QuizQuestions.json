@@ -126,7 +126,7 @@
     "b": "Constructors, Coupling, Interface and Superclasses",
     "c": "Method, Inheritence, Concurrency and Abstraction",
     "d": "There are no 4 key words",
-    "ans": "Polymorphism, encapsulation, inheritance and abstraction"
+    "ans": "Polymorphism, Encapsulation, Inheritance and Abstraction"
   },{
     "q": "What is method overloading?",
     "a": "When a class is allowed to have multiple methods with the same name",
