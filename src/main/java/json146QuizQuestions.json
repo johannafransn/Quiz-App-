@@ -1,149 +1,153 @@
-//will add quiz questions from CS146 here soon
 
 {
   "questions": [{
-    "q": "A Java keyword for referring to the superclass is?",
-    "a": "Constructor",
-    "b": "Super",
-    "c": "Subclass",
-    "d": "Superclass",
-    "ans": "Super"
+    "q": "What is the best case for Insertion Sort?",
+    "a": "O(logn)",
+    "b": "O(nlogn)",
+    "c": "O(n)",
+    "d": "O(n^2)",
+    "ans": "O(n)"
   },{
-    "q": "What is the typical method you override in the subclass?",
-    "a": "mouseClicked()",
-    "b": "setButton()",
-    "c": "toString()",
-    "d": "repaint()",
-    "ans": "toString()"
+    "q": "What is the best case for Selection Sort?",
+    "a": "O(1)",
+    "b": "O(n^2)",
+    "c": "O(logn)",
+    "d": "O(n)",
+    "ans": "O(n^2)"
   },{
-    "q": "How many primitive data types are there?",
-    "a": "3",
-    "b": "4",
-    "c": "6",
-    "d": "8",
-    "ans": "6"
+    "q": "Which of these are FALSE regarding max heaps?",
+    "a": "Parent node can not be smaller than children",
+    "b": "The root node is the node with greatest value",
+    "c": "The first node in the heap array is the largest",
+    "d": "The last node in the heap array is the smallest.",
+    "ans": "The last node in the heap array is the smallest."
   },{
-    "q": "If I have one superclass, how many subclasses can I have?",
-    "a": "1",
-    "b": "10",
-    "c": "Infinity",
-    "d": "2",
-    "ans": "Infinity"
+    "q": "What is time complexity of building a n-node heap?",
+    "a": "O(nlogn)",
+    "b": "O(n)",
+    "c": "O(logn)",
+    "d": "O(1)",
+    "ans": "O(nlogn)"
   },{
-    "q": "What are wrapper classes used for?",
-    "a": "To convert a string to individual chars",
-    "b": "To convert primitive data type to a object type",
-    "c": "To define interfaces more easily",
-    "d": "To make constructors more accessible",
-    "ans": "To convert primitive data type to a object type"
+
+    "q": "What is time complexity of sorting n numbers using heapsort",
+    "a": "O(nlogn)",
+    "b": "O(n)",
+    "c": "O(logn)",
+    "d": "O(1)",
+    "ans": "O(nlogn)"
+  },{
+    "q": "What are the minimum and maximum number of nodes in a heap of height h?",
+    "a": "2^h and 2^(h+1)",
+    "b": "2^h and 2^(h+1) – 1",
+    "c": "2^h and 2^(h+1) + 1",
+    "d": "2^h + 1 and 2^(h+1)",
+    "ans": "2^h and 2^(h+1) - 1",
+  },{
+    "q": "What are the minimum and maximum number of nodes in a heap of height 5",
+    "a": "32 and 65",
+    "b": "33 and 64",
+    "c": "32 and 63",
+    "d": "31 and 64",
+    "ans": "32 and 64",
+  },{
+    "q": "Which of the following is (are) correct?",
+    "a": "The time complexity to heapify a random n-node binary tree (or n-number array) is O(n)",
+    "b": "Heap sort is a stable sort. That is, operations on the heap will keep the relative order of equal items.",
+    "c": "Heap sort is an in-place sort since no extra space, besides the given array, is used during the sorting.",
+    "d": "None of these",
+    "ans": "Heap sort is an in-place sort since no extra space, besides the given array, is used during the sorting.",
+  },{
+    "q": "Which of the following is TRUE about binary heaps and heapsort? ",
+    "a": "Finding the maximum element in a min heap tree has a complexity of  O(log n)",
+    "b": "Turning a random set of elements into a heap has a complexity of O(log n)",
+    "c": "The worst-case time complexity of heapsort is O(n2).",
+    "d": "Heapsort can be implemented with no additional space  ",
+    "ans": "Heapsort can be implemented with no additional space  ",
+  },{
+    "q": "Which of the following is true according to this BST property?",
+    "a": "The largest element is the right-most element",
+    "b": "The largest element is the root node.",
+    "c": "The largest element is the last element (the right-most element on the bottom level)",
+    "d": "The largest element is the left-most element",
+    "ans": "The largest element is the right-most element",
+  },{
+    "q": "What is time complexity of buiding an n-node Binary Search Tree in the worst & best case?",
+    "a": "best case: O(n log n),  and worst case: O(n log n)",
+    "b": "best case: O(n),  and worst case: O(n log n)",
+    "c": "best case: O(nlog n),  and worst case: O(n^2)",
+    "d": "best case: O(n),  and worst case: O(n^2)",
+    "ans": "best case: O(nlog n),  and worst case: O(n^2)",
+  },{
+    "q": "What are the max and min number of nodes in a binary search tree of height 3? ",
+    "a": "max =  16,     min = 4",
+    "b": "max =   7,     min = 3",
+    "c": "max =   8,     min = 3",
+    "d": "max = 15,     min =  4",
+    "ans": "max = 15,     min =  4",
+  },{
+    "q": "What are the max and min number of nodes in a binary search tree of height h",
+    "a": "max = 2^(h+1)-1, min = h+1",
+    "b": "max = 2^(h+1)+1, min = h+1",
+    "c": "max = 2^(h-1), min = h-1",
+    "d": "None of these",
+    "ans": "max = 2^(h+1)-1, min = h+1",
+  },{
+    "q": "Which of the following is true about Heap vs Binary Search Tree?",
+    "a": "BST tree traversal is slower than BST tree construction by the recursive insertions.",
+    "b": "Heapsort has the same time complexity in the best case and worst case.",
+    "c": "Sorting with BST has the same time complexity in the best case and worst case.",
+    "d": "None of these",
+    "ans": "Heapsort has the same time complexity in the best case and worst case.",
+  },{
+    "q": "The smallest and the largest keys in an AVL tree can always be found on ",
+    "a": "Only the  last level",
+    "b": "Only the  last two levels",
+    "c": "Only the  last three levels",
+    "d": "All the levels",
+    "ans": "All the levels",
+  },{
+    "q": "Which of the following is false?",
+    "a": "Red Black trees are absolutely balanced or at least ‘almost’ balanced.",
+    "b": "In a Red-Black tree, there are equal numbers of red and black nodes.",
+    "c": "Every path from root to a leaf (or to a null child) must contain the same number of black nodes",
+    "d": "In a Red Black tree, every node is either red or black.",
+    "ans": "In a Red-Black tree, there are equal numbers of red and black nodes.",
+  },{
+    "q": "In a Red-Black tree, newly inserted nodes are always colored:",
+    "a": "black",
+    "b": "The same color as parent node",
+    "c": "red",
+    "d": "The opposite color of parent node",
+    "ans": "red",
   },{
     "q": "How many wrapper classes are there?",
     "a": "1",
     "b": "8",
     "c": "3",
     "d": "10",
-    "ans": "8"
-
+    "ans": "8",
   },{
-    "q": "What is a String?",
-    "a": "Collection of characters that are mutable",
-    "b": "Collection of characters that are immutable",
-    "c": "Collection of binary numbers encoded in the alphabet",
-    "d": "It's the same thing as a charachter",
-    "ans": "Collection of characters that are immutable"
+    "q": "What is an external sorting algorithm?",
+    "a": "Algorithm that uses tape or disk during the sort",
+    "b": "Algorithm that uses main memory during the sort",
+    "c": "Algorithm that uses comparison based sorting",
+    "d": "None of these",
+    "ans": "Algorithm that uses tape or disk during the sort",
   },{
-
-    "q": "Where is your program executed?",
-    "a": "In the computer's processor",
-    "b": "In the computer's hardrive",
-    "c": "In the computer's SSD",
-    "d": "In the computer's RAM",
-    "ans": "In the computer's RAM"
+    "q": "What is an internal sorting algorithm?",
+    "a": "Algorithm that uses tape or disk during the sort",
+    "b": "Algorithm that uses main memory during the sort",
+    "c": "Algorithm that uses comparison based sorting",
+    "d": "None of these",
+    "ans": "Algorithm that uses main memory during the sort",
   },{
-    "q": "What is the difference between ArrayList and Array?",
-    "a": "ArrayList is always unorderd while array is ordered",
-    "b": "Array can contain infinity number of elements, while ArrayList can only contain a finite number",
-    "c": "An Array contain a fixed number of elements, while in an ArrayList you can remove/add items",
-    "d": "You can only store primitive data types in an ArrayList",
-    "ans": "An Array contain a fixed number of elements, while in an ArrayList you can remove/add items"
-  },{
-    "q": "Why do we have to minimize the number of couplings?",
-    "a": "To maximize time efficency",
-    "b": "Because if you change one thing in the code, it might affect many other aspects in the code",
-    "c": "To minimize amount of storage use",
-    "d": "Because otherwise the code will be hard to read",
-    "ans": "Because if you change one thing in the code, it might affect many other aspects in the code"
-  },{
-    "q": "What does the superclass store?",
-    "a": "It stores all the interfaces",
-    "b": "It stores everything the subclasses use",
-    "c": "It stores all the programs constructors",
-    "d": "It stores all the programs mutators",
-    "ans": "It stores everything the subclasses use"
-  },{
-    "q": "What does the CRC stand for?",
-    "a": "Compiler Reader Compatiblity",
-    "b": "Constructor Redundancy Cycle",
-    "c": "Class Responsibility Collaborators",
-    "d": "Count Radix Computing",
-    "ans": "Class Responsibility Collaborators"
-  },{
-    "q": "When would you use a private constructor?",
-    "a": "When you want to disallow instantiation of the class from outside that class",
-    "b": "When you want to make an encrypted program",
-    "c": "When you want to minimize the number of dependencies",
-    "d": "When you don't need a mutator",
-    "ans": "When you want to disallow instantiation of the class from outside that class"
-  },{
-    "q": "A mouse event is a(n) ... ",
-    "a": "Listener",
-    "b": "Object",
-    "c": "Interface",
-    "d": "All of the above",
-    "ans": "All of the above"
-  },{
-    "q": "A class which implements the ActionListener interface must implement which method?",
-    "a": "void handle( ActionEvent e )",
-    "b": "void actionPerformed( ActionEvent e ) ",
-    "c": "void eventDispatched( AWTEvent e )",
-    "d": "String getActionCommand( ActionEvent e )",
-    "ans": "void actionPerformed( ActionEvent e )"
-  },{
-    "q": "Why would a class be declared as abstract?",
-    "a": "Because it doesn’t make logical sense to instantiate it",
-    "b": "So that it can be used as an interface",
-    "c": "So that it cannot be inherited from",
-    "d": "Because it has no abstract methods",
-    "ans": "Because it doesn’t make logical sense to instantiate it"
-  },{
-    "q": "Which of the following is true about an abstract method inherited into a class C?",
-    "a": "All of these answers are true",
-    "b": "It overrides any method in C with the same name",
-    "c": "It always forces C to become abstract",
-    "d": "It must be defined in C before C can be instantiated",
-    "ans": "It must be defined in C before C can be instantiated"
-  },{
-    "q": "What are the 4 key words in Object Oriented Programming",
-    "a": "Polymorphism, Encapsulation, Inheritance and Abstraction",
-    "b": "Constructors, Coupling, Interface and Superclasses",
-    "c": "Method, Inheritence, Concurrency and Abstraction",
-    "d": "There are no 4 key words",
-    "ans": "Polymorphism, Encapsulation, Inheritance and Abstraction"
-  },{
-    "q": "What is method overloading?",
-    "a": "When a class is allowed to have multiple methods with the same name",
-    "b": "When the program is can't compile because a method is too big",
-    "c": "When the constructor is allowed to have different argument lists",
-    "d": "When a method allows a subclass to provide a specific implementation of a method that is already provided by one of its superclasses",
-    "ans": "When a class is allowed to have multiple methods with the same name"
-  },{
-    "q": "What is/are the key word(s) in exception handling?",
-    "a": "try",
-    "b": "catch",
-    "c": "throw",
-    "d": "All of the above",
-    "ans": "All of the above"
-
+    "q": "In the following scenarios, when will you use selection sort?",
+    "a": "Large values need to be sorted with small keys",
+    "b": "Small values need to be sorted with large keys",
+    "c": "When the array is already sorted in ascending order",
+    "d": "When the array is already sorted in descending order",
+    "ans": "Large values need to be sorted with small keys"
 
   }
   ]
