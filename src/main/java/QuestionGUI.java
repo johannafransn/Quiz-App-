@@ -242,8 +242,7 @@ public class QuestionGUI extends JFrame {
 
         questionStatusField.setText("Q: "+( currentIndex+1 )+"/"+( adapter.maxKey()+1 ));
 
-        // bg.clearSelection();
-        cleartSelection(bg);
+        bg.clearSelection();
         retrieveSelectedChoice();
 
         // set Next Button Text based on current Index #
@@ -260,14 +259,7 @@ public class QuestionGUI extends JFrame {
         System.out.println(currentIndex+" = "+adapter.maxKey());
     }
 
-    void cleartSelection(ButtonGroup bg)
-    {
-        Enumeration<AbstractButton> e =bg.getElements();
-        while(e.hasMoreElements()) {
-            AbstractButton b = e.nextElement();
-            b.setSelected(false);
-        }
-    }
+
 }
 
 
