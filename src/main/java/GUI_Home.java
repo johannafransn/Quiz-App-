@@ -32,11 +32,7 @@ public class GUI_Home extends JFrame {
         middlePanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         middlePanel.setBackground(theme.getColor("middlePanelColor"));
 
-        ImageIcon imageIcon = new ImageIcon(theme.getImgDir() + "logo_transparent.png");
-        Image image = imageIcon.getImage().getScaledInstance(120, 120,  java.awt.Image.SCALE_SMOOTH);
-        imageIcon = new ImageIcon(image);
-
-        logoField = new JLabel(imageIcon, SwingConstants.LEFT);
+        logoField = new JLabel(theme.resizeIcon("logo_transparent.png", 120, 120), SwingConstants.LEFT);
         //logoField.setPreferredSize(new Dimension(130,130));
         logoField.setForeground(theme.getColor("h1Color"));
         logoField.setFont(theme.getFont("h1"));

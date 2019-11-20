@@ -59,28 +59,31 @@ public class QuestionGUI extends JFrame {
         bottomToolBar.setBounds(0,340,500,60);
         bottomToolBar.setBackground(theme.getColor("bottomPanelColor"));
 
-        nextQBtn = new JButton("Next Question >");
-        nextQBtn.setBounds(295,15,190,35);
+        nextQBtn = new JButton(""); //Next Question >
+        nextQBtn.setBounds(440,10,50,40);
         nextQBtn.setBackground(theme.getColor("btnColor"));
         nextQBtn.setForeground(theme.getColor("fontBtnColor"));
         nextQBtn.setFont(theme.getFont("normalFont"));
+        nextQBtn.setBorder(BorderFactory.createEmptyBorder());
+        nextQBtn.setContentAreaFilled(false);
 
-        prevQBtn = new JButton("< Previous Question");
-        prevQBtn.setBounds(15,15,230,35);
+        prevQBtn = new JButton("");//< Previous Question
+        prevQBtn.setIcon(theme.resizeIcon("arrow_left.png", 50, 40));
+        prevQBtn.setBounds(15,10,50,40);
         prevQBtn.setBackground(theme.getColor("btnColor"));
         prevQBtn.setForeground(theme.getColor("fontBtnColor"));
         prevQBtn.setFont(theme.getFont("normalFont"));
+        prevQBtn.setBorder(BorderFactory.createEmptyBorder());
+        prevQBtn.setContentAreaFilled(false);
 
         choice1 = new JRadioButton();
         choice1.setPreferredSize(radioSize);
-        //choice1.setBounds(5,3,250,90);
         choice1.setBackground(theme.getColor("choicesPanelColor"));
         choice1.setForeground(theme.getColor("fontColor"));
         choice1.setFont(theme.getFont("choicesFont"));
         choice1.setText("<html><body style=''>Choice1 aaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa</html>");
 
         choice2 = new JRadioButton();
-        //choice2.setBounds(260,3,230,90);
         choice2.setBackground(theme.getColor("choicesPanelColor"));
         choice2.setForeground(theme.getColor("fontColor"));
         choice2.setFont(theme.getFont("choicesFont"));
@@ -88,7 +91,6 @@ public class QuestionGUI extends JFrame {
         choice2.setPreferredSize(radioSize);
 
         choice3 = new JRadioButton();
-        //choice3.setBounds(5,88,250,90);
         choice3.setBackground(theme.getColor("choicesPanelColor"));
         choice3.setForeground(theme.getColor("fontColor"));
         choice3.setFont(theme.getFont("choicesFont"));
@@ -96,7 +98,6 @@ public class QuestionGUI extends JFrame {
         choice3.setPreferredSize(radioSize);
 
         choice4 = new JRadioButton();
-        //choice4.setBounds(260,88,230,90);
         choice4.setBackground(theme.getColor("choicesPanelColor"));
         choice4.setForeground(theme.getColor("fontColor"));
         choice4.setFont(theme.getFont("choicesFont"));
@@ -241,9 +242,12 @@ public class QuestionGUI extends JFrame {
 
         // set Next Button Text based on current Index #
         if (currentIndex == adapter.maxKey())
-            nextQBtn.setText("Submit");
-        else
-            nextQBtn.setText("Next Question >");
+            //nextQBtn.setText("Submit");
+            nextQBtn.setIcon(theme.resizeIcon("check.png", 50, 40));
+        else {
+            //nextQBtn.setText(""); //Next Question >
+            nextQBtn.setIcon(theme.resizeIcon("arrow_right.png", 50, 40));
+        }
 
         // set Prev Button visibility based on current Index #
         if (currentIndex == 0)
@@ -252,8 +256,6 @@ public class QuestionGUI extends JFrame {
             prevQBtn.setVisible(true);
         //System.out.println(currentIndex+" = "+adapter.maxKey());
     }
-
-
 }
 
 

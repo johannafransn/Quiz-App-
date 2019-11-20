@@ -37,6 +37,6 @@ public class ResultProcessor {
 
     public String getResultTotal() {
         double total = (double) correct / (adapter.maxKey()+1);
-        return "<h2>Your score: "+ Math.round(total * 100)+"%</h2>";
+        return "<h1>Your score: "+ Math.round(total * 100)+"%</h1>";
     }
 }

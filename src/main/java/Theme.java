@@ -1,3 +1,5 @@
+import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -63,5 +65,12 @@ public class Theme {
 
     public String getImgDir() {
         return projectDirectory + "img/";
+    }
+
+    public ImageIcon resizeIcon(String filepath, int width, int height){
+        Image rawImage = new ImageIcon(getImgDir() + filepath).getImage();
+        Image renderedImage = rawImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        ImageIcon image = new ImageIcon(renderedImage);
+        return image;
     }
 }
