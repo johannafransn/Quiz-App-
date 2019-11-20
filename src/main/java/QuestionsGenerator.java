@@ -20,7 +20,7 @@ public class QuestionsGenerator
     // This is where you set max number of questions
     // Make sure this number is less than the actual question in JSON 
     //    otherwise it will throw error
-    private int maxQuestions = 10;
+    private int maxQuestions = 3;
 
     /**
      * Read JSON file into ArrayList and return iterator

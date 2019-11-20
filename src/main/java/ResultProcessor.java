@@ -11,16 +11,23 @@ public class ResultProcessor {
 
         for (int i = 0; i <= adapter.maxKey(); i++) {
             SelectedChoiceModel select = adapter.getSelected(i);
+            String correctAnswer = select.Answer();
 
-            String color = "red";
+
+            String Qcss = "red";
+            String YAcss = "text-decoration: line-through; color: red;";
             if (select.Selected().compareTo(select.Answer()) == 0 && select.Selected().length() != 0) {
-                color = "green";
+                Qcss = "";
                 correct++;
             }
 
-            result += "<li style='color: "+color+"'>"+select.Question()+"<br>";
-            result += "Your answer: "+select.Selected()+"<br>";
-            result += "Correct answer: "+select.Answer()+"<br></li>";
+
+            result += "<li><b style='color: "+Qcss+"'>"+select.Question()+"</b><br>";
+            if (Qcss != "") {
+                result += "Your answer: <span style='" + YAcss + "'>" + select.Selected() + "</span><br>";
+            }
+            correctAnswer = "<span style='color: green'>"+select.Answer()+"</span>";
+            result += "Correct answer: "+correctAnswer+"<br></li>";
         }
     }
 
@@ -30,6 +37,6 @@ public class ResultProcessor {
 
     public String getResultTotal() {
         double total = (double) correct / (adapter.maxKey()+1);
-        return "Your score: "+ Math.round(total * 100)+"%";
+        return "<h2>Your score: "+ Math.round(total * 100)+"%</h2>";
     }
 }
