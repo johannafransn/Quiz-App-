@@ -13,7 +13,7 @@ public class Main
     {
 
         String userDirectory = System.getProperty("user.dir");
-        String projectDirectory = userDirectory + "/src/main/java";
+        String projectDirectory = userDirectory + "/src/main/java/data";
         QuestionsAdapter adapter = new QuestionsAdapter(projectDirectory + "/json151QuizQuestions.json");
         //JFrame result = new ResultGUI(adapter);
         //result.setVisible(true);
