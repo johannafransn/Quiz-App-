@@ -6,10 +6,13 @@ import java.util.Enumeration;
 
 public class QuestionGUI extends JFrame {
 
+    private Theme theme;
+
     private QuestionModel question;
     private int currentIndex = 0;
 
     private JLabel questionField;
+    private JLabel questionTitleField;
     private JLabel questionStatusField;
     private ButtonGroup bg;
     private JRadioButton choice1;
@@ -23,107 +26,97 @@ public class QuestionGUI extends JFrame {
     private QuestionsAdapter adapter;
 
     //Constructor 
-    public QuestionGUI(QuestionsAdapter a) {
+    public QuestionGUI(QuestionsAdapter a, String title) {
 
         adapter = a;
         question = adapter.getQuestion(currentIndex);
 
+        theme = Theme.getInstance();
         //pane with null layout
         JPanel contentPane = new JPanel(null);
         contentPane.setPreferredSize(new Dimension(500,400));
+
         contentPane.setBackground(new Color(255,255,255));
-
-        Font normalFont = new Font("sansserif",0,20);
-        Font questionFont = new Font("sansserif",0,30);
-        Font choicesFont = new Font("sansserif",0,16);
-        
-        Color mainColor = new Color(238, 108, 77);
-        Color fontColor = new Color(61, 90, 128);
-        Color fontStatusColor = new Color(224, 251, 252);
-        Color fontQuestionColor = mainColor; //new Color(61, 90, 128);
-        Color fontBtnColor = new Color(11, 37, 69);
-        
-        Color btnColor = new Color(152, 193, 217);
-        Color topPanelColor = new Color(61, 90, 128);
-        Color questionPanelColor = new Color(224, 251, 252);
-        Color choicesPanelColor = new Color(152, 193, 217);
-        Color bottomPanelColor = topPanelColor; //new Color(61, 90, 128);
-
         Dimension radioSize = new Dimension(240, 80);
 
         JPanel topStatusPanel = new JPanel(null);
-        topStatusPanel.setBorder(BorderFactory.createEtchedBorder(1));
+        //topStatusPanel.setBorder(BorderFactory.createEtchedBorder(1));
         topStatusPanel.setBounds(0,0,500,45);
-        topStatusPanel.setBackground(topPanelColor);
+        topStatusPanel.setBackground(theme.getColor("topPanelColor"));
 
         JPanel questionPanel = new JPanel(null);
-        questionPanel.setBorder(BorderFactory.createEtchedBorder(1));
+        //questionPanel.setBorder(BorderFactory.createEtchedBorder(1));
         questionPanel.setBounds(0,45,500,115);
-        questionPanel.setBackground(questionPanelColor);
+        questionPanel.setBackground(theme.getColor("questionPanelColor"));
 
         JPanel choicesPanel = new JPanel();
-        choicesPanel.setBorder(BorderFactory.createEtchedBorder(1));
+        //choicesPanel.setBorder(BorderFactory.createEtchedBorder(1));
         choicesPanel.setBounds(0,160,500,180);
-        choicesPanel.setBackground(choicesPanelColor);
+        choicesPanel.setBackground(theme.getColor("choicesPanelColor"));
 
         JPanel bottomToolBar = new JPanel(null);
-        bottomToolBar.setBorder(BorderFactory.createEtchedBorder(1));
+        //bottomToolBar.setBorder(BorderFactory.createEtchedBorder(1));
         bottomToolBar.setBounds(0,340,500,60);
-        bottomToolBar.setBackground(bottomPanelColor);
+        bottomToolBar.setBackground(theme.getColor("bottomPanelColor"));
 
         nextQBtn = new JButton("Next Question >");
         nextQBtn.setBounds(295,15,190,35);
-        nextQBtn.setBackground(btnColor);
-        nextQBtn.setForeground(fontBtnColor);
-        nextQBtn.setFont(normalFont);
+        nextQBtn.setBackground(theme.getColor("btnColor"));
+        nextQBtn.setForeground(theme.getColor("fontBtnColor"));
+        nextQBtn.setFont(theme.getFont("normalFont"));
 
         prevQBtn = new JButton("< Previous Question");
         prevQBtn.setBounds(15,15,230,35);
-        prevQBtn.setBackground(btnColor);
-        prevQBtn.setForeground(fontBtnColor);
-        prevQBtn.setFont(normalFont);
+        prevQBtn.setBackground(theme.getColor("btnColor"));
+        prevQBtn.setForeground(theme.getColor("fontBtnColor"));
+        prevQBtn.setFont(theme.getFont("normalFont"));
 
         choice1 = new JRadioButton();
         choice1.setPreferredSize(radioSize);
         //choice1.setBounds(5,3,250,90);
-        choice1.setBackground(choicesPanelColor);
-        choice1.setForeground(fontColor);
-        choice1.setFont(choicesFont);
+        choice1.setBackground(theme.getColor("choicesPanelColor"));
+        choice1.setForeground(theme.getColor("fontColor"));
+        choice1.setFont(theme.getFont("choicesFont"));
         choice1.setText("<html><body style=''>Choice1 aaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa</html>");
 
         choice2 = new JRadioButton();
         //choice2.setBounds(260,3,230,90);
-        choice2.setBackground(choicesPanelColor);
-        choice2.setForeground(fontColor);
-        choice2.setFont(choicesFont);
+        choice2.setBackground(theme.getColor("choicesPanelColor"));
+        choice2.setForeground(theme.getColor("fontColor"));
+        choice2.setFont(theme.getFont("choicesFont"));
         choice2.setText("<html><body style=''>Choice2 aaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa</html>");
         choice2.setPreferredSize(radioSize);
 
         choice3 = new JRadioButton();
         //choice3.setBounds(5,88,250,90);
-        choice3.setBackground(choicesPanelColor);
-        choice3.setForeground(fontColor);
-        choice3.setFont(choicesFont);
+        choice3.setBackground(theme.getColor("choicesPanelColor"));
+        choice3.setForeground(theme.getColor("fontColor"));
+        choice3.setFont(theme.getFont("choicesFont"));
         choice3.setText("<html><body style=''>Choice3 aaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa</html>");
         choice3.setPreferredSize(radioSize);
 
         choice4 = new JRadioButton();
         //choice4.setBounds(260,88,230,90);
-        choice4.setBackground(choicesPanelColor);
-        choice4.setForeground(fontColor);
-        choice4.setFont(choicesFont);
+        choice4.setBackground(theme.getColor("choicesPanelColor"));
+        choice4.setForeground(theme.getColor("fontColor"));
+        choice4.setFont(theme.getFont("choicesFont"));
         choice4.setText("Choice4");
         choice4.setPreferredSize(radioSize);
 
         questionField = new JLabel("<html><div style=''>Question</div></html>", SwingConstants.CENTER);
         questionField.setBounds(0,0,500,115);
-        questionField.setForeground(fontQuestionColor);
-        questionField.setFont(questionFont);
+        questionField.setForeground(theme.getColor("fontQuestionColor"));
+        questionField.setFont(theme.getFont("h1"));
+
+        questionTitleField = new JLabel(title, SwingConstants.LEFT);
+        questionTitleField.setBounds(10,0,350,40);
+        questionTitleField.setForeground(theme.getColor("fontStatusColor"));
+        questionTitleField.setFont(theme.getFont("h1"));
 
         questionStatusField = new JLabel("Q: 2/10", SwingConstants.RIGHT);
-        questionStatusField.setBounds(400,5,80,35);
-        questionStatusField.setForeground(fontStatusColor);
-        questionStatusField.setFont(normalFont);
+        questionStatusField.setBounds(370,5,120,35);
+        questionStatusField.setForeground(theme.getColor("fontStatusColor"));
+        questionStatusField.setFont(theme.getFont("normalFont"));
         
         // Radio button grouping
         bg = new ButtonGroup();
@@ -143,22 +136,23 @@ public class QuestionGUI extends JFrame {
         bottomToolBar.add(prevQBtn);
         questionPanel.add(questionField);
         contentPane.add(questionPanel);
+        topStatusPanel.add(questionTitleField);
         topStatusPanel.add(questionStatusField);
         contentPane.add(topStatusPanel);
 
         //menu generate method
-        FileMenu fileMenu = new FileMenu();
-        this.setJMenuBar(fileMenu.getMenu());
+        //FileMenu fileMenu = new FileMenu();
+        //this.setJMenuBar(fileMenu.getMenu());
 
         //adding panel to JFrame and setting of window position and close operation
         this.add(contentPane);
         this.setTitle("Questions");
         this.setSize(500,400);
         this.setResizable(false);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.pack();
-        this.setVisible(true);
+        //this.setVisible(true);
         final JFrame thisFrame = this;
         // Set question and radio button fields
         setFields();
@@ -256,7 +250,7 @@ public class QuestionGUI extends JFrame {
             prevQBtn.setVisible(false);
         else
             prevQBtn.setVisible(true);
-        System.out.println(currentIndex+" = "+adapter.maxKey());
+        //System.out.println(currentIndex+" = "+adapter.maxKey());
     }
 
 
