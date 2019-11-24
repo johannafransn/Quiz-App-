@@ -38,7 +38,7 @@ public class GUI_Home extends JFrame {
         logoField.setFont(theme.getFont("h1"));
 
         textField = new JLabel("<html><body style='padding: 6px'>" +
-                "<h2>The more you know, the more you grow!</h2>" +
+                "<h2>Grow more with knowledge!</h2>" +
                 "By: Tai Huynh, Khoa Tran and Johanna Fransson<br><br>" +
                 "Choose an option below to start:</body></html>", SwingConstants.LEFT);
         //textField.setPreferredSize(new Dimension(130,130));

@@ -1,3 +1,5 @@
+ 
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -20,7 +22,7 @@ public class QuestionsGenerator
     // This is where you set max number of questions
     // Make sure this number is less than the actual question in JSON 
     //    otherwise it will throw error
-    private int maxQuestions = 3;
+    private int maxQuestions = 10;
 
     /**
      * Read JSON file into ArrayList and return iterator
