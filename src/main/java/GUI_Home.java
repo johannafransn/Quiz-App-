@@ -33,7 +33,7 @@ public class GUI_Home extends JFrame {
         middlePanel.setBackground(theme.getColor("middlePanelColor"));
 
         logoField = new JLabel(theme.resizeIcon("logo_transparent.png", 120, 120), SwingConstants.LEFT);
-        //logoField.setPreferredSize(new Dimension(130,130));
+        logoField.setPreferredSize(new Dimension(100,130));
         logoField.setForeground(theme.getColor("h1Color"));
         logoField.setFont(theme.getFont("h1"));
 
@@ -41,7 +41,7 @@ public class GUI_Home extends JFrame {
                 "<h2>Grow more with knowledge!</h2>" +
                 "By: Tai Huynh, Khoa Tran and Johanna Fransson<br><br>" +
                 "Choose an option below to start:</body></html>", SwingConstants.LEFT);
-        //textField.setPreferredSize(new Dimension(130,130));
+        textField.setPreferredSize(new Dimension(390,130));
         textField.setForeground(theme.getColor("h1Color"));
         textField.setFont(theme.getFont("normalFont"));
 
