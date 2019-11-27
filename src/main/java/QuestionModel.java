@@ -1,6 +1,3 @@
- 
-
-
 /**
  * Model Structure for questions, choices and correct answer
  */

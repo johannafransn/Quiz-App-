@@ -1,25 +1,44 @@
- 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-
+/**
+ * Result GUI JFrame
+ */
 public class ResultGUI extends JFrame {
 
     private Theme theme;
-
     private JLabel titleField;
     private JLabel textField;
 
     private QuestionsAdapter adapter;
 
-    //Constructor
+    /**
+     * Constructor for objects of class ResultGUI
+     */
     public ResultGUI(QuestionsAdapter a) {
         adapter = a;
 
         theme = Theme.getInstance();
 
+        //adding panel to JFrame and setting of window position and close operation
+        JPanel contentPane = getPanel();
+        this.add(contentPane);
+        this.setTitle("Result");
+        this.setSize(500,400);
+
+        this.setResizable(false);
+        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.pack();
+        this.setVisible(false);
+    }
+
+    /**
+     * Get JPanel GUI and set actions listener for radios and buttons
+     *
+     * @return JPanel GUI
+     */
+    public JPanel getPanel() {
         // Panels
         JPanel contentPane = new JPanel();
         contentPane.setPreferredSize(new Dimension(500,400));
@@ -52,39 +71,26 @@ public class ResultGUI extends JFrame {
         contentPane.add(topStatusPanel, "North");
         contentPane.add(middlePanel, "Center");
 
-
-        //menu generate method
-        //FileMenu fileMenu = new FileMenu();
-        //this.setJMenuBar(fileMenu.getMenu());
-
-        //adding panel to JFrame and setting of window position and close operation
-        this.add(contentPane);
-        this.setTitle("Result");
-        this.setSize(500,400);
-
-        this.setResizable(false);
-        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
-        this.pack();
-        this.setVisible(false);
-
         final JFrame thisFrame = this;
 
-        this.addComponentListener ( new ComponentAdapter ()
-        {
-            public void componentShown ( ComponentEvent e )
-            {
+        this.addComponentListener(new ComponentAdapter () {
+            public void componentShown (ComponentEvent e) {
                 fillTextField();
-                //System.out.println ( "Component shown" );
+                //System.out.println ("Component shown");
             }
 
-            public void componentHidden ( ComponentEvent e )
-            {
-                //System.out.println ( "Component hidden" );
+            public void componentHidden (ComponentEvent e) {
+                //System.out.println ("Component hidden");
             }
-        } );
+        });
+
+        return contentPane;
     }
 
+    /**
+     * Call the ResultProcessor to iterate and process the SelectedChoiceModel
+     * then set result text
+     */
     public void fillTextField() {
         ResultProcessor result = new ResultProcessor(adapter);
         String text = result.getResultText();

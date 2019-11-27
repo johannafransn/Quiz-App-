@@ -1,11 +1,12 @@
- 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Enumeration;
 
+/**
+ * Question GUI JFrame
+ */
 public class QuestionGUI extends JFrame {
 
     private Theme theme;
@@ -27,14 +28,39 @@ public class QuestionGUI extends JFrame {
 
     private QuestionsAdapter adapter;
 
-    //Constructor 
+    /**
+     * Constructor for objects of class QuestionGUI
+     */
     public QuestionGUI(QuestionsAdapter a, String title) {
 
         adapter = a;
         question = adapter.getQuestion(currentIndex);
 
         theme = Theme.getInstance();
-        //pane with null layout
+
+        //adding panel to JFrame and setting of window position and close operation
+        JPanel contentPane = getPanel(title);
+        // Set question and radio button fields
+        setFields();
+        this.add(contentPane);
+        this.setTitle("Questions");
+        this.setSize(500,400);
+        this.setResizable(false);
+        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.pack();
+        this.setVisible(false);
+    }
+
+    /**
+     * Get JPanel GUI and set actions listener for radios and buttons
+     *
+     * @param title A String for the Quiz object title
+     * @return JPanel GUI
+     */
+    public JPanel getPanel(String title) {
+        final JFrame thisFrame = this;
+
         JPanel contentPane = new JPanel(null);
         contentPane.setPreferredSize(new Dimension(500,400));
 
@@ -120,7 +146,7 @@ public class QuestionGUI extends JFrame {
         questionStatusField.setBounds(370,5,120,35);
         questionStatusField.setForeground(theme.getColor("fontStatusColor"));
         questionStatusField.setFont(theme.getFont("normalFont"));
-        
+
         // Radio button grouping
         bg = new ButtonGroup();
         bg.add(choice1);
@@ -142,23 +168,6 @@ public class QuestionGUI extends JFrame {
         topStatusPanel.add(questionTitleField);
         topStatusPanel.add(questionStatusField);
         contentPane.add(topStatusPanel);
-
-        //menu generate method
-        //FileMenu fileMenu = new FileMenu();
-        //this.setJMenuBar(fileMenu.getMenu());
-
-        //adding panel to JFrame and setting of window position and close operation
-        this.add(contentPane);
-        this.setTitle("Questions");
-        this.setSize(500,400);
-        this.setResizable(false);
-        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
-        this.pack();
-        //this.setVisible(true);
-        final JFrame thisFrame = this;
-        // Set question and radio button fields
-        setFields();
 
         nextQBtn.addActionListener(new ActionListener()
         {
@@ -193,8 +202,14 @@ public class QuestionGUI extends JFrame {
                 }
             }
         });
+
+        return contentPane;
     }
 
+    /**
+     * Using iterator to set actions listener for radios
+     * Save the selected radio by creating SelectedChoiceModel object and store into array
+     */
     public void saveChoice() {
         Enumeration elements = bg.getElements();
         while (elements.hasMoreElements()) {
@@ -210,7 +225,9 @@ public class QuestionGUI extends JFrame {
             }
         }
     }
-
+    /**
+     * Set radio selected options to the same state as the SelectedChoiceModel object
+     */
     public void retrieveSelectedChoice() {
         Enumeration elements = bg.getElements();
         while (elements.hasMoreElements()) {
@@ -220,16 +237,30 @@ public class QuestionGUI extends JFrame {
             }
         }
     }
-
+    /**
+     * Set JPanel JTextField with HTML for formatting purpose
+     *
+     * @param q A String to override the textfield
+     */
     public void setQField(String q) {
         questionField.setText("<html><p style='padding: 10px;'>"+q+"</p><html>");
     }
 
+    /**
+     * Set JPanel JRadioButton text field with HTML for formatting purpose
+     *
+     * @param c JRadioButton object
+     * @param q A String to override the textfield
+     */
     public void setChoiceField(JRadioButton c, String q) {
         c.setText("<html>"+q+"<html>");
         c.setActionCommand(q);
     }
 
+    /**
+     * Clear radios button selections
+     * Retrieve selected radio button data and apply the changes
+     */
     public void setFields() {
         setQField(question.getQuestionString());
         setChoiceField(choice1, question.getChoice1());

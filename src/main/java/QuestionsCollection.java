@@ -1,10 +1,6 @@
- 
-
-import java.io.*;
 import java.util.*;
 /**
- * Collection Class
- *
+ * Main Collection of QuestionModel and SelectedChoiceModel
  */
 public class QuestionsCollection
 {

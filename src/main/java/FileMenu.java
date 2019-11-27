@@ -1,7 +1,7 @@
- 
-
 import javax.swing.*;
-
+/**
+ * Java FileMenu (currently not using)
+ */
 public class FileMenu {
     private JMenuBar menuBar;
 

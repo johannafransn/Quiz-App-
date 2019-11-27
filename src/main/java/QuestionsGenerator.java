@@ -14,8 +14,8 @@ import java.util.Iterator;
 
 
 /**
- * Generate Questions Model based on JSON data
- *
+ * Generate questions based on JSON data
+ * And contains the Model object
  */
 public class QuestionsGenerator
 {
@@ -25,9 +25,11 @@ public class QuestionsGenerator
     private int maxQuestions = 10;
 
     /**
-     * Read JSON file into ArrayList and return iterator
+     * Read JSON file and convert into an ArrayList then return QuestionsCollection ArrayList
      *
-     * @return    iterator of QuestionsCollection
+     * @param jsonFilePath A string to the file's location
+     * @exception FileNotFoundException, IOException, or ParseException
+     * @return QuestionsCollection
      */
     public QuestionsCollection generateQuestions(String jsonFilePath)
     {

@@ -1,10 +1,6 @@
- 
-
 import java.util.*;
 /**
- * Questions Adapter
- *  use interface to get QuestionModel
- *  
+ * Questions Adapter, use BackEnd interface to get QuestionModel
  */
 public class QuestionsAdapter implements BackEnd
 {
@@ -26,8 +22,8 @@ public class QuestionsAdapter implements BackEnd
      * Get questions from Questions Generator Class
      * it contains Questions collection
      *
-     * @param     int index
-     * @return    QuestionModel
+     * @param index The position in the ArrayList questions
+     * @return QuestionModel
      */
     public QuestionModel getQuestion(int index)
     {
@@ -37,23 +33,28 @@ public class QuestionsAdapter implements BackEnd
 
     /**
      * get collection max length
+     *
+     * @return integer Max Key Value
      */
     public int maxKey() {
         return questions.maxKey();
     }
 
     /**
-     * Save selected choice key to collection
+     * Save selected radio's key to the Answers Array
+     *
+     * @param index The position in the ArrayList questions
+     * @param s The SelectedChoiceModel
      */
     public void saveChoice(int index, SelectedChoiceModel s) {
         questions.setChoice(index, s);
     }
 
     /**
-     * Get selected choice from Collection by index key
+     * Get Selected Choice Model from Collection by index key
      *
-     * @param     int index number
-     * @return    string
+     * @param index The position in the ArrayList questions
+     * @return The SelectedChoiceModel
      */
     public SelectedChoiceModel getSelected(int index) {
         return questions.getChoice(index);
@@ -61,23 +62,17 @@ public class QuestionsAdapter implements BackEnd
 
     /**
      * Get all string questions from collection
+     *
+     * @return ArrayList of questions
      */
     public ArrayList getAllQuestions() {
         return questions.getAllQuestions();
     }
 
     /**
-     * Get all string questions from collection
-     */
-    public ArrayList getAllSelecteChoice() {
-        return questions.getAllSelecteChoice();
-    }
-
-    /**
-     * Troubleshooting QuestionsCollection
+     * Used for troubleshooting questionsCollection to see if the collection is not empty
      *
-     * @param     Iterator from getQuestions()
-     * @return    print out of all objects in QuestionsCollection
+     * @return print out of all objects in QuestionsCollection
      */
     public void printAll() {
         Iterator i = questions.iterator();
