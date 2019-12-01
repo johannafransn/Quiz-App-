@@ -1,28 +1,26 @@
- 
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-
+import java.util.concurrent.*;
 
 /**
- * Generate questions based on JSON data
+ * Generate questions based on JSON data using multithreaded cpu processing
  * And contains the Model object
  */
 public class QuestionsGenerator
 {
     // This is where you set max number of questions
     // Make sure this number is less than the actual question in JSON 
-    //    otherwise it will throw error
-    private int maxQuestions = 10;
+    // otherwise it will throw error
+    private int maxQuestions = 4;
+    private QuestionsCollection question;
 
     /**
      * Read JSON file and convert into an ArrayList then return QuestionsCollection ArrayList
@@ -33,7 +31,7 @@ public class QuestionsGenerator
      */
     public QuestionsCollection generateQuestions(String jsonFilePath)
     {
-        QuestionsCollection question = new QuestionsCollection();
+        question = new QuestionsCollection();
         
         try {
             // parsing file "JSONExample.json" 
@@ -57,7 +55,16 @@ public class QuestionsGenerator
             // Add QuestionModel to collection, only uses maxQuestions (top 3 for now)  
            if (maxQuestions <= tempList.size())
             {
-                for(int i = 0; i < maxQuestions; i++)
+                int halfNumberQ = (int) (maxQuestions/2);
+                Runnable r1 = new MultiThreadQGen(0, halfNumberQ, tempList, question);
+                Runnable r2 = new MultiThreadQGen(halfNumberQ, maxQuestions, tempList, question);
+
+                ExecutorService service = Executors.newCachedThreadPool();
+                service.execute(r1);
+                service.execute(r2);
+                service.shutdown();
+
+                /*for(int i = 0; i < maxQuestions; i++)
                 {
                     JSONObject object = (JSONObject) tempList.get(i);
                     question.add(
@@ -75,10 +82,7 @@ public class QuestionsGenerator
                     question.addChoice(new SelectedChoiceModel("","",""));
 
                     //System.out.println("Added question #"+i);
-                 }
-
-
-
+                 }*/
             }else{
                     System.out.println("You messed up! You need to set QuestionsGenerator.maxQuestions to less than the JSON questions count");
             }
